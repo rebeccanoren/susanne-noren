@@ -1,5 +1,9 @@
 <script>
-	console.log('Om mig');
+	import { SliceZone } from '@prismicio/svelte';
+
+	import { components } from '$lib/slices';
+
+	export let data;
 </script>
 
-<section class="about">Hej</section>
+<SliceZone slices={data.page.data.slices} {components} />
