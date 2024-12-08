@@ -68,12 +68,34 @@ export type AboutDocument<Lang extends string = string> = prismic.PrismicDocumen
 	Lang
 >;
 
-type CaseDocumentDataSlicesSlice = never;
+type CaseDocumentDataSlicesSlice = QuoteSlice | TextWithImageSlice | ImageSlice | TextSlice;
 
 /**
  * Content for Case documents
  */
 interface CaseDocumentData {
+	/**
+	 * Title field in *Case*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Title of portfolio item
+	 * - **API ID Path**: case.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Portfolio Image field in *Case*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: case.portfolio_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	portfolio_image: prismic.ImageField<never>;
+
 	/**
 	 * Slice Zone field in *Case*
 	 *
