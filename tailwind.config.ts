@@ -17,7 +17,7 @@ export default {
 		// },
 		extend: {
 			fontWeight: {
-				semibold: '400', // Add semibold font weight
+				semibold: '600', 
 			},
 			backgroundColor: {
 				default: 'none', // Set default to transparent
