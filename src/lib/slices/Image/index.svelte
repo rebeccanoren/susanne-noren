@@ -8,9 +8,6 @@
 
 	export let slice: Content.ImageSlice;
 	export let index: number;
-
-	console.log('Caption:', slice.primary.caption);
-	console.log('Figcaption:', slice.primary.figcaption);
 </script>
 
 <Bounded
@@ -30,5 +27,5 @@
 				{/if}
 			</figure>
 		</div>
-	{/if}
+	{/if}https://apps.fastout.com/images/pano-drag-icon-sweden.gif
 </Bounded>
