@@ -29,8 +29,8 @@
 		/>
 	{/if}
 	<Bounded tag="div" yPadding="lg" class="relative">
-		<div class="gap-8">
-			<div class="max-w-5xl py-8">
+		<div class="gap-8 grid items-start justify-items-start gap-y-20px">
+			<div class="max-w-5xl">
 				<PrismicRichText
 					field={slice.primary.text}
 					components={{
@@ -41,7 +41,7 @@
 			{#if isFilled.link(slice.primary.buttonLink)}
 				<PrismicLink
 					field={slice.primary.buttonLink}
-					class={`rounded px-5 py-3 font-medium ${
+					class={`rounded px-5 py-3 font-medium inline-block ${
 						slice.variation === 'transparentBackground'
 							? 'bg-black text-white'
 							: 'bg-transparent text-slate-800'

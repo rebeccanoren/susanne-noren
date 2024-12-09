@@ -32,10 +32,15 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Anim magna ad amet amet culpa esse ex commodo aute exercitation officia."
+							"text": "Adipisicing cillum irure voluptate. Excepteur deserunt anim magna laborum aliquip dolor esse proident nisi aute commodo."
 						}
 					}
 				]
+			},
+			"figcaption": {
+				"__TYPE__": "FieldContent",
+				"value": "force",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -71,6 +76,22 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Pariatur culpa labore incididunt id ad mollit eu ea proident labore."
+						}
+					}
+				]
+			},
+			"figcaption": {
+				"__TYPE__": "FieldContent",
+				"value": "watch",
+				"type": "Text"
 			}
 		},
 		"items": [

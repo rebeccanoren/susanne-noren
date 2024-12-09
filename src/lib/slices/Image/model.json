@@ -22,10 +22,17 @@
         "caption": {
           "type": "StructuredText",
           "config": {
-            "label": "Caption",
-            "placeholder": "Describe the image",
+            "label": "Caption (optional)",
+            "placeholder": "Give the image a nice caption",
             "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "figcaption": {
+          "type": "Text",
+          "config": {
+            "label": "Figcaption",
+            "placeholder": "Explain the image"
           }
         }
       },
@@ -48,6 +55,22 @@
               "height": 1000
             },
             "thumbnails": []
+          }
+        },
+        "caption": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Caption (optional)",
+            "placeholder": "Give the image a nice caption",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "figcaption": {
+          "type": "Text",
+          "config": {
+            "label": "Figcaption",
+            "placeholder": "Explain the image"
           }
         }
       },

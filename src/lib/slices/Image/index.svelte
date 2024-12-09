@@ -8,6 +8,9 @@
 
 	export let slice: Content.ImageSlice;
 	export let index: number;
+
+	console.log('Caption:', slice.primary.caption);
+	console.log('Figcaption:', slice.primary.figcaption);
 </script>
 
 <Bounded
@@ -17,17 +20,15 @@
 	data-slice-variation={slice.variation}
 >
 	{#if isFilled.image(slice.primary.image)}
-		<div class="bg-gray-100">
-			<PrismicImage field={slice.primary.image} sizes="100vw" class="w-full" />
-			<!-- {#if isFilled.richText(slice.primary.)}
-				<div
-					class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white p-4"
-				>
-					<p class="text-center">
-						<PrismicText field={slice.primary.caption} />
-					</p>
-				</div>
-			{/if} -->
+		<div class="bg-transparent text-center">
+			<figure>
+				<PrismicImage field={slice.primary.image} sizes="100vw" class="w-full" />
+				{#if isFilled.richText(slice.primary.caption)}
+					<figcaption class="py-6">
+						<PrismicRichText field={slice.primary.caption} />
+					</figcaption>
+				{/if}
+			</figure>
 		</div>
 	{/if}
 </Bounded>

@@ -417,6 +417,68 @@ export type AllDocumentTypes =
 	| SettingsDocument;
 
 /**
+ * Primary content in *ContentIndex → Default → Primary*
+ */
+export interface ContentIndexSliceDefaultPrimary {
+	/**
+	 * Title field in *ContentIndex → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Title
+	 * - **API ID Path**: content_index.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Description field in *ContentIndex → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: content_index.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * FallbackImage field in *ContentIndex → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: content_index.default.primary.fallbackimage
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	fallbackimage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ContentIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentIndexSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<ContentIndexSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *ContentIndex*
+ */
+type ContentIndexSliceVariation = ContentIndexSliceDefault;
+
+/**
+ * ContentIndex Shared Slice
+ *
+ * - **API ID**: `content_index`
+ * - **Description**: ContentIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentIndexSlice = prismic.SharedSlice<'content_index', ContentIndexSliceVariation>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -561,14 +623,24 @@ export interface ImageSliceDefaultPrimary {
 	image: prismic.ImageField<never>;
 
 	/**
-	 * Caption field in *Image → Default → Primary*
+	 * Caption (optional) field in *Image → Default → Primary*
 	 *
 	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: Describe the image
+	 * - **Placeholder**: Give the image a nice caption
 	 * - **API ID Path**: image.default.primary.caption
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	caption: prismic.RichTextField;
+
+	/**
+	 * Figcaption field in *Image → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Explain the image
+	 * - **API ID Path**: image.default.primary.figcaption
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	figcaption: prismic.KeyTextField;
 }
 
 /**
@@ -597,6 +669,26 @@ export interface ImageSliceBannerPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * Caption (optional) field in *Image → Banner → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Give the image a nice caption
+	 * - **API ID Path**: image.banner.primary.caption
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	caption: prismic.RichTextField;
+
+	/**
+	 * Figcaption field in *Image → Banner → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Explain the image
+	 * - **API ID Path**: image.banner.primary.figcaption
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	figcaption: prismic.KeyTextField;
 }
 
 /**
@@ -997,6 +1089,10 @@ declare module '@prismicio/client' {
 			SettingsDocument,
 			SettingsDocumentData,
 			AllDocumentTypes,
+			ContentIndexSlice,
+			ContentIndexSliceDefaultPrimary,
+			ContentIndexSliceVariation,
+			ContentIndexSliceDefault,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSliceTransparentBackgroundPrimary,
