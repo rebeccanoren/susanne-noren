@@ -559,6 +559,16 @@ export interface ImageSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * Caption field in *Image → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Describe the image
+	 * - **API ID Path**: image.default.primary.caption
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	caption: prismic.RichTextField;
 }
 
 /**

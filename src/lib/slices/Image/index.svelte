@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { isFilled, type Content } from '@prismicio/client';
 	import { PrismicImage } from '@prismicio/svelte';
+	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 	import clsx from 'clsx';
 
 	import Bounded from '$lib/components/Bounded.svelte';
@@ -18,6 +19,15 @@
 	{#if isFilled.image(slice.primary.image)}
 		<div class="bg-gray-100">
 			<PrismicImage field={slice.primary.image} sizes="100vw" class="w-full" />
+			<!-- {#if isFilled.richText(slice.primary.)}
+				<div
+					class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white p-4"
+				>
+					<p class="text-center">
+						<PrismicText field={slice.primary.caption} />
+					</p>
+				</div>
+			{/if} -->
 		</div>
 	{/if}
 </Bounded>
