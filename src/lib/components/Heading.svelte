@@ -9,9 +9,9 @@
 	this={tag}
 	class={clsx(
 		'font-semibold leading-tight tracking-tight md:leading-tight',
-		size === 'xl' && 'text-5xl md:text-7xl',
-		size === 'lg' && 'text-4xl md:text-5xl',
-		size === 'md' && 'text-3xl md:text-4xl',
+		size === 'xl' && 'text-4xl md:text-5xl',
+		size === 'lg' && 'text-3xl md:text-4xl',
+		size === 'md' && 'text-2xl md:text-3xl',
 		size === 'sm' && 'text-xl md:text-2xl',
 		$$props.class
 	)}

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-[data-collapsible].bg-white + [data-collapsible].bg-white,
+[data-collapsible].bg-transparent + [data-collapsible].bg-transparent,
 [data-collapsible].bg-slate-100 + [data-collapsible].bg-slate-100 {
 	@apply pt-0 md:pt-0;
 }

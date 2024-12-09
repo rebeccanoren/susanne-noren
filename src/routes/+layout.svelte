@@ -8,6 +8,10 @@
 	import '@fontsource-variable/outfit';
 
 	export let data;
+
+	// Extract `siteTitle` and `background_color` from `data.settings`
+	const siteTitle = data.settings?.data?.siteTitle || 'Default Site Title';
+	const backgroundColor = data.settings?.data?.background_color || '#ffffff';
 </script>
 
 <svelte:head>
@@ -23,7 +27,7 @@
 		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 </svelte:head>
-<div class="text-slate-800">
+<div class="text-slate-800" style={`background-color: ${backgroundColor}`}>
 	<Header navigation={data.navigation} settings={data.settings} />
 	<main><slot /></main>
 </div>

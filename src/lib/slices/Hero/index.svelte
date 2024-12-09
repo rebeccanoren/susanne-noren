@@ -8,14 +8,20 @@
 	import Heading from './Heading.svelte';
 
 	export let slice: Content.HeroSlice;
+
+	// Determine the background and text classes based on the variation
+	const backgroundClass =
+		slice.variation === 'transparentBackground'
+			? 'bg-transparent text-slate-900'
+			: 'bg-slate-900 text-white';
 </script>
 
 <section
-	class="relative bg-slate-900 text-white"
+	class={`relative ${backgroundClass}`}
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	{#if isFilled.image(slice.primary.backgroundImage)}
+	{#if isFilled.image(slice.primary.backgroundImage) && slice.variation !== 'transparentBackground'}
 		<PrismicImage
 			field={slice.primary.backgroundImage}
 			alt=""
@@ -23,8 +29,8 @@
 		/>
 	{/if}
 	<Bounded tag="div" yPadding="lg" class="relative">
-		<div class="grid justify-items-center gap-8">
-			<div class="max-w-2xl text-center">
+		<div class="gap-8">
+			<div class="max-w-5xl py-8">
 				<PrismicRichText
 					field={slice.primary.text}
 					components={{
@@ -35,7 +41,11 @@
 			{#if isFilled.link(slice.primary.buttonLink)}
 				<PrismicLink
 					field={slice.primary.buttonLink}
-					class="rounded bg-white px-5 py-3 font-medium text-slate-800"
+					class={`rounded px-5 py-3 font-medium ${
+						slice.variation === 'transparentBackground'
+							? 'bg-black text-white'
+							: 'bg-transparent text-slate-800'
+					} self-start`}
 				>
 					{slice.primary.buttonText || 'Learn More'}
 				</PrismicLink>

@@ -380,6 +380,17 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	siteTitle: prismic.TitleField;
+
+	/**
+	 * Background color field in *Settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Tailwind background color
+	 * - **API ID Path**: settings.background_color
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	background_color: prismic.KeyTextField;
 }
 
 /**
@@ -464,9 +475,67 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Transparent Background → Primary*
+ */
+export interface HeroSliceTransparentBackgroundPrimary {
+	/**
+	 * Text field in *Hero → Transparent Background → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.transparentBackground.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * Button Link field in *Hero → Transparent Background → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.transparentBackground.primary.buttonLink
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	buttonLink: prismic.LinkField;
+
+	/**
+	 * Button Text field in *Hero → Transparent Background → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.transparentBackground.primary.buttonText
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	buttonText: prismic.KeyTextField;
+
+	/**
+	 * Background Image field in *Hero → Transparent Background → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.transparentBackground.primary.backgroundImage
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	backgroundImage: prismic.ImageField<never>;
+}
+
+/**
+ * Transparent Background variation for Hero Slice
+ *
+ * - **API ID**: `transparentBackground`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceTransparentBackground = prismic.SharedSliceVariation<
+	'transparentBackground',
+	Simplify<HeroSliceTransparentBackgroundPrimary>,
+	never
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault;
+type HeroSliceVariation = HeroSliceDefault | HeroSliceTransparentBackground;
 
 /**
  * Hero Shared Slice
@@ -920,8 +989,10 @@ declare module '@prismicio/client' {
 			AllDocumentTypes,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
+			HeroSliceTransparentBackgroundPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
+			HeroSliceTransparentBackground,
 			ImageSlice,
 			ImageSliceDefaultPrimary,
 			ImageSliceBannerPrimary,

@@ -11,7 +11,7 @@
 
 <Bounded
 	tag="section"
-	class={clsx('bg-white', index === 0 && 'pt-0 md:pt-0')}
+	class={clsx('bg-transperant', index === 0 && 'pt-0 md:pt-0')}
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >

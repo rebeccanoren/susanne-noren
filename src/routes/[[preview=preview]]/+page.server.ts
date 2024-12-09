@@ -1,8 +1,8 @@
+import type { PageServerLoad } from './$types'; // Import SvelteKit's type for server-side load functions
 import { asText } from '@prismicio/client';
-
 import { createClient } from '$lib/prismicio';
 
-export async function load({ fetch, cookies }) {
+export const load: PageServerLoad = async ({ fetch, cookies }) => {
 	const client = createClient({ fetch, cookies });
 
 	const page = await client.getByUID('page', 'home');
@@ -12,9 +12,9 @@ export async function load({ fetch, cookies }) {
 		title: asText(page.data.title),
 		meta_description: page.data.meta_description,
 		meta_title: page.data.meta_title,
-		meta_image: page.data.meta_image.url
+		meta_image: page.data.meta_image.url,
 	};
-}
+};
 
 export function entries() {
 	return [{}];
