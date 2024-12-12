@@ -27,5 +27,5 @@
 				{/if}
 			</figure>
 		</div>
-	{/if}https://apps.fastout.com/images/pano-drag-icon-sweden.gif
+	{/if}
 </Bounded>
