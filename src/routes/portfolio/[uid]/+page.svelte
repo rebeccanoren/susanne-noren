@@ -32,10 +32,13 @@
 			<Heading tag="h1">{data.page.data.title || 'Untitled'}</Heading>
 
 			<!-- Tags section -->
-			<div class="flex gap-4 text-slate-900">
+			<div class="py-4 flex gap-1 md:gap-2 text-slate-900">
 				{#if data.page.tags && data.page.tags.length > 0}
 					{#each data.page.tags as tag}
-						<span class="text-l font-bold">{tag}</span>
+						<span
+							class="text-xs md:text-sm bg-white bg-opacity-60 px-3 py-1 rounded-2xl whitespace-nowrap"
+							>{tag}</span
+						>
 					{/each}
 				{:else}
 					<span class="text-gray-500 italic">No tags available</span>
