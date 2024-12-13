@@ -1,26 +1,25 @@
 import { createClient } from '$lib/prismicio';
-import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params, fetch, cookies }) => {
-	// Create a Prismic client with the fetch and cookies context
+export async function load({ params, fetch, cookies }) {
 	const client = createClient({ fetch, cookies });
 
-	// Fetch the page data using the UID from the route parameters
 	const page = await client.getByUID('case', params.uid);
 
-	// Return the page data to the +page.svelte component
 	return {
-		page
+		page,
+		title: page.data.meta_title,
+		meta_description: page.data.meta_description,
+		meta_title: page.data.meta_title || page.data.title, 
+		meta_image: page.data.meta_image,
 	};
-};
+}
 
-export const entries = async () => {
-	// Create a Prismic client without fetch/cookies if unnecessary
+export async function entries() {
 	const client = createClient();
 
-	// Fetch all pages of the 'case' type
 	const pages = await client.getAllByType('case');
 
-	// Map the pages to return only their UID
-	return pages.map((page) => ({ uid: page.uid }));
-};
+	return pages.map((page) => {
+		return { uid: page.uid };
+	});
+}
