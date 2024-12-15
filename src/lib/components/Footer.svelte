@@ -6,7 +6,7 @@
 </script>
 
 <footer
-	class="bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-900
+	class="bg-gradient-to-r from-fuchsia-300 via-fuchsia-400 to-fuchsia-600
  text-white py-8"
 >
 	<div class="container mx-auto flex flex-col items-center gap-4">
