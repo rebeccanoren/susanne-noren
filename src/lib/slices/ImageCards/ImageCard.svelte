@@ -24,7 +24,10 @@
 	</div>
 	{#if isFilled.link(card.buttonLink)}
 		<div>
-			<PrismicLink field={card.buttonLink} class="font-semibold">
+			<PrismicLink
+				field={card.buttonLink}
+				class="rounded-full px-5 py-3 font-medium inline-block bg-black text-white"
+			>
 				{card.buttonText || 'More Info'}
 			</PrismicLink>
 		</div>

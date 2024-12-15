@@ -21,6 +21,17 @@
 					"label": "Background color",
 					"placeholder": "Tailwind background color"
 				}
+			},
+			"favicon": {
+				"type": "Image",
+				"config": {
+					"label": "Favicon",
+					"constraint": {
+						"width": 48,
+						"height": 48
+					},
+					"thumbnails": []
+				}
 			}
 		}
 	}

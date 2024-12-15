@@ -36,7 +36,7 @@
 				{#if data.page.tags && data.page.tags.length > 0}
 					{#each data.page.tags as tag}
 						<span
-							class="text-xs md:text-sm bg-white bg-opacity-60 px-3 py-1 rounded-2xl whitespace-nowrap"
+							class="text-xs md:text-sm bg-white bg-opacity-60 px-3 py-1 rounded-full whitespace-nowrap"
 							>{tag}</span
 						>
 					{/each}

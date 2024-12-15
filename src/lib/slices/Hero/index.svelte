@@ -41,7 +41,7 @@
 			{#if isFilled.link(slice.primary.buttonLink)}
 				<PrismicLink
 					field={slice.primary.buttonLink}
-					class={`rounded px-5 py-3 font-medium inline-block ${
+					class={`rounded-full px-5 py-3 font-medium inline-block ${
 						slice.variation === 'transparentBackground'
 							? 'bg-black text-white'
 							: 'bg-transparent text-slate-800'
