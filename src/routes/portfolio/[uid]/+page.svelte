@@ -32,7 +32,7 @@
 			<Heading tag="h1">{data.page.data.title || 'Untitled'}</Heading>
 
 			<!-- Tags section -->
-			<div class="py-4 flex gap-1 md:gap-2 text-slate-900">
+			<div class="py-4 flex gap-1 md:gap-2 text-slate-900 flex-wrap">
 				{#if data.page.tags && data.page.tags.length > 0}
 					{#each data.page.tags as tag}
 						<span

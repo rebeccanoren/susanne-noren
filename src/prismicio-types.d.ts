@@ -304,6 +304,31 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 >;
 
 /**
+ * Item in *Settings → Nav Item*
+ */
+export interface SettingsDocumentDataNavItemItem {
+	/**
+	 * Link field in *Settings → Nav Item*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.nav_item[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * Label field in *Settings → Nav Item*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.nav_item[].label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	label: prismic.KeyTextField;
+}
+
+/**
  * Content for Settings documents
  */
 interface SettingsDocumentData {
@@ -339,6 +364,61 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	favicon: prismic.ImageField<never>;
+
+	/**
+	 * Name field in *Settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: The name of the website
+	 * - **API ID Path**: settings.name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	name: prismic.KeyTextField;
+
+	/**
+	 * Nav Item field in *Settings*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.nav_item[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	nav_item: prismic.GroupField<Simplify<SettingsDocumentDataNavItemItem>>;
+
+	/**
+	 * CTA Link field in *Settings*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.cta_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	cta_link: prismic.LinkField;
+
+	/**
+	 * CTA Label field in *Settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.cta_label
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	cta_label: prismic.KeyTextField;
+
+	/**
+	 * Linkedin Link field in *Settings*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.linkedin_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	linkedin_link: prismic.LinkField;
 }
 
 /**
@@ -1032,6 +1112,7 @@ declare module '@prismicio/client' {
 			PageDocumentDataSlicesSlice,
 			SettingsDocument,
 			SettingsDocumentData,
+			SettingsDocumentDataNavItemItem,
 			AllDocumentTypes,
 			ContentIndexSlice,
 			ContentIndexSliceDefaultPrimary,

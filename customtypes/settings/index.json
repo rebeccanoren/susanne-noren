@@ -32,6 +32,66 @@
 					},
 					"thumbnails": []
 				}
+			},
+			"name": {
+				"type": "Text",
+				"config": {
+					"label": "Name",
+					"placeholder": "The name of the website"
+				}
+			},
+			"nav_item": {
+				"type": "Group",
+				"config": {
+					"label": "Nav Item",
+					"repeat": true,
+					"fields": {
+						"link": {
+							"type": "Link",
+							"config": {
+								"label": "Link",
+								"placeholder": "",
+								"allowTargetBlank": true,
+								"select": null,
+								"allowText": true
+							}
+						},
+						"label": {
+							"type": "Text",
+							"config": {
+								"label": "Label",
+								"placeholder": ""
+							}
+						}
+					}
+				}
+			},
+			"cta_link": {
+				"type": "Link",
+				"config": {
+					"label": "CTA Link",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"select": null,
+					"allowText": true
+				}
+			},
+			"cta_label": {
+				"type": "Text",
+				"config": {
+					"label": "CTA Label",
+					"placeholder": ""
+				}
+			},
+			"linkedin_link": {
+				"type": "Link",
+				"config": {
+					"label": "Linkedin Link",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"select": null,
+					"allowText": true
+				}
 			}
 		}
 	}

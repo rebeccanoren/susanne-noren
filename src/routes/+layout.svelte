@@ -4,6 +4,7 @@
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	import '@fontsource-variable/outfit';
 
@@ -13,7 +14,7 @@
 
 	const siteTitle = data.settings?.data?.siteTitle || 'Default Site Title';
 	const backgroundColor = data.settings?.data?.background_color || '#ffffff';
-	const faviconUrl = data.settings?.data?.favicon?.url;
+	const faviconUrl = data.settings?.data?.favicon?.url || '%sveltekit.assets%/favicon.png';
 </script>
 
 <svelte:head>
@@ -34,7 +35,8 @@
 	{/if}
 </svelte:head>
 <div class="text-slate-800" style={`background-color: ${backgroundColor}`}>
-	<Header navigation={data.navigation} settings={data.settings} />
+	<Header settings={data.settings} />
 	<main><slot /></main>
+	<Footer settings={data.settings} />
 </div>
 <PrismicPreview {repositoryName} />
