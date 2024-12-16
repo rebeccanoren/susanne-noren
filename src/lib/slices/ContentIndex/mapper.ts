@@ -14,7 +14,7 @@ const mapper: SliceMapper<
 
 	const items = await client.getAllByType('case');
 
-	return { slice, items };
+	return { slice, items }; // Pass only 'slice' and 'items'
 };
 
 export default mapper;

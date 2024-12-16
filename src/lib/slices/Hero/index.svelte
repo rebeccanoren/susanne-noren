@@ -8,6 +8,8 @@
 	import Heading from './Heading.svelte';
 
 	export let slice: Content.HeroSlice;
+	export const context = undefined;
+	export const index = undefined;
 
 	// Determine the background and text classes based on the variation
 	const backgroundClass =

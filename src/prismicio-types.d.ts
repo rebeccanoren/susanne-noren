@@ -33,6 +33,17 @@ interface CaseDocumentData {
 	portfolio_image: prismic.ImageField<never>;
 
 	/**
+	 * intro field in *Case*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Explain the case briefly
+	 * - **API ID Path**: case.intro
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	intro: prismic.RichTextField;
+
+	/**
 	 * Slice Zone field in *Case*
 	 *
 	 * - **Field Type**: Slice Zone

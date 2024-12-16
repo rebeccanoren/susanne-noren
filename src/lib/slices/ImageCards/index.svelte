@@ -7,6 +7,8 @@
 	import Heading from '$lib/components/Heading.svelte';
 
 	export let slice: Content.ImageCardsSlice;
+	export const context = undefined;
+	export const index = undefined;
 </script>
 
 <Bounded

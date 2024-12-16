@@ -3,6 +3,7 @@
 
 	export let tag = 'h1';
 	export let size: 'sm' | 'md' | 'lg' | 'xl' = 'lg';
+	export const node = undefined; // Mark as external reference
 </script>
 
 <svelte:element

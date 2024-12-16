@@ -6,6 +6,8 @@
 	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
 
 	export let slice: Content.TextSlice;
+	export const context = undefined;
+	export const index = undefined;
 </script>
 
 <Bounded

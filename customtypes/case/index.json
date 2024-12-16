@@ -27,6 +27,15 @@
 					"thumbnails": []
 				}
 			},
+			"intro": {
+				"type": "StructuredText",
+				"config": {
+					"label": "intro",
+					"placeholder": "Explain the case briefly",
+					"allowTargetBlank": false,
+					"multi": "paragraph,strong,em"
+				}
+			},
 			"slices": {
 				"type": "Slices",
 				"fieldset": "Slice Zone",
