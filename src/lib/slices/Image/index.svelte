@@ -17,7 +17,7 @@
 	data-slice-variation={slice.variation}
 >
 	{#if isFilled.image(slice.primary.image)}
-		<div class="bg-transparent text-center pt-6">
+		<div class="bg-transparent text-center pt-8">
 			<figure>
 				<PrismicImage field={slice.primary.image} sizes="100vw" class="w-full" />
 				{#if isFilled.richText(slice.primary.caption)}
