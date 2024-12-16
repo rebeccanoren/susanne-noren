@@ -40,8 +40,6 @@
 							>{tag}</span
 						>
 					{/each}
-				{:else}
-					<span class="text-gray-500 italic">No tags available</span>
 				{/if}
 			</div>
 		</div>
