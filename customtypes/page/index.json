@@ -35,6 +35,9 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"portfolio_card": {
+							"type": "SharedSlice"
+						},
 						"content_index": {
 							"type": "SharedSlice"
 						},
