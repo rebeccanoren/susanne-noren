@@ -6,7 +6,7 @@
 
 	export let linkField: LinkField;
 	export let label: KeyTextField;
-	export let showIcon: boolean = true;
+	// export let showIcon: boolean = true;
 	let className: string = '';
 	export { className as class };
 </script>

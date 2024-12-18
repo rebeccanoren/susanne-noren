@@ -38,6 +38,13 @@
                   "thumbnails": []
                 }
               },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
               "link": {
                 "type": "Link",
                 "config": {
@@ -53,6 +60,15 @@
                 "config": {
                   "label": "Tag",
                   "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em"
                 }
               }
             }

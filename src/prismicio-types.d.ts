@@ -869,6 +869,16 @@ export interface PortfolioCardSliceDefaultPrimaryCardsItem {
 	image: prismic.ImageField<never>;
 
 	/**
+	 * Title field in *PortfolioCard → Default → Primary → Cards*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio_card.default.primary.cards[].title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
 	 * link field in *PortfolioCard → Default → Primary → Cards*
 	 *
 	 * - **Field Type**: Link
@@ -887,6 +897,16 @@ export interface PortfolioCardSliceDefaultPrimaryCardsItem {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	tag: prismic.KeyTextField;
+
+	/**
+	 * Description field in *PortfolioCard → Default → Primary → Cards*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio_card.default.primary.cards[].description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
 }
 
 /**
