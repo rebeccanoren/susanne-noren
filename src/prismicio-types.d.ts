@@ -854,6 +854,93 @@ type ImageCardsSliceVariation = ImageCardsSliceDefault;
 export type ImageCardsSlice = prismic.SharedSlice<'image_cards', ImageCardsSliceVariation>;
 
 /**
+ * Item in *PortfolioCard → Default → Primary → Cards*
+ */
+export interface PortfolioCardSliceDefaultPrimaryCardsItem {
+	/**
+	 * image field in *PortfolioCard → Default → Primary → Cards*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio_card.default.primary.cards[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * link field in *PortfolioCard → Default → Primary → Cards*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio_card.default.primary.cards[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * Tag field in *PortfolioCard → Default → Primary → Cards*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio_card.default.primary.cards[].tag
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	tag: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *PortfolioCard → Default → Primary*
+ */
+export interface PortfolioCardSliceDefaultPrimary {
+	/**
+	 * Heading field in *PortfolioCard → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio_card.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.RichTextField;
+
+	/**
+	 * Cards field in *PortfolioCard → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio_card.default.primary.cards[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	cards: prismic.GroupField<Simplify<PortfolioCardSliceDefaultPrimaryCardsItem>>;
+}
+
+/**
+ * Default variation for PortfolioCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioCardSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<PortfolioCardSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *PortfolioCard*
+ */
+type PortfolioCardSliceVariation = PortfolioCardSliceDefault;
+
+/**
+ * PortfolioCard Shared Slice
+ *
+ * - **API ID**: `portfolio_card`
+ * - **Description**: PortfolioCard
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioCardSlice = prismic.SharedSlice<'portfolio_card', PortfolioCardSliceVariation>;
+
+/**
  * Primary content in *Quote → Default → Primary*
  */
 export interface QuoteSliceDefaultPrimary {
@@ -1146,6 +1233,11 @@ declare module '@prismicio/client' {
 			ImageCardsSliceDefaultPrimary,
 			ImageCardsSliceVariation,
 			ImageCardsSliceDefault,
+			PortfolioCardSlice,
+			PortfolioCardSliceDefaultPrimaryCardsItem,
+			PortfolioCardSliceDefaultPrimary,
+			PortfolioCardSliceVariation,
+			PortfolioCardSliceDefault,
 			QuoteSlice,
 			QuoteSliceDefaultPrimary,
 			QuoteSliceVariation,
