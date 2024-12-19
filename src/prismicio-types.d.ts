@@ -907,6 +907,16 @@ export interface PortfolioCardSliceDefaultPrimaryCardsItem {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	description: prismic.RichTextField;
+
+	/**
+	 * Background color field in *PortfolioCard → Default → Primary → Cards*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: portfolio_card.default.primary.cards[].background_color
+	 * - **Documentation**: https://prismic.io/docs/field#color
+	 */
+	background_color: prismic.ColorField;
 }
 
 /**

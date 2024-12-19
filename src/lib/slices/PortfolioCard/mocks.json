@@ -53,7 +53,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"provider": "imgix",
 									"url": "https://images.unsplash.com/photo-1618381898514-2b6bcb4f8d40?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxNHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzM0NTI1MzI0fDA&ixlib=rb-4.0.3&q=85&rect=0,1691,4800,2618&w=2200&h=1200",
 									"alt": "yellow fruit with blue background",
@@ -73,7 +72,17 @@
 											"y": 1691
 										}
 									},
+									"credits": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
+								}
+							],
+							[
+								"background_color",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Color",
+									"value": "#FFFFFF"
 								}
 							]
 						]
