@@ -30,12 +30,13 @@
 										<PrismicImage
 											field={card.image}
 											sizes="100vw"
-											class="w-full h-72 object-cover transition-transform ease-out group-hover:scale-110 bg-slate-50"
+											class="w-full h-72 object-cover transition-transform ease-out group-hover:scale-110"
+											style="background-color: {card.background_color || '#ffffff'}"
 										/>
 									</div>
 								{/if}
 
-								<div class="w-full md:w-1/2 p-6">
+								<div class="w-full md:w-1/2 p-6 flex flex-col justify-center items-start">
 									{#if card.title}
 										<h3
 											class="text-xl font-semibold text-slate-900 transition-all group-hover:underline group-hover:text-slate-700"
